@@ -1,0 +1,47 @@
+Select  distinct
+  Informe.Contrato AS Contrato,
+  Informe.NomeMix AS NomeMix,
+  Fornecedores.RAZAO AS RAZAO,
+  TAB_PAIS.NOME AS NOME,
+  Informe.C_C AS C_C,
+  PrudutoContratoT.FormPago AS FormPago,
+  Informe.QUANTIDADETOTAL AS QUANTIDADETOTAL,
+  Informe.SDataEmbarque AS SDataEmbarque,
+  PrudutoContratoT.PrecoFOB AS PrecoFOB,
+  Informe.PRECOFOBTOTAL AS PRECOFOBTOTAL,
+  PrudutoContratoT.PrecoSCC AS PrecoSCC,
+  Informe.VALORSCCTOTAL AS VALORSCCTOTAL,
+  Boocking.Navio AS NAVIO_BUQ,
+  Boocking.Quantidade AS Quantidade,
+  ExpotadoTransito.Navio AS Navio,
+  ExpotadoTransito.QuantidadeExp AS QuantidadeExp,
+  ExpotadoTransito.Valor AS Valor,
+  ExpotadoTransito.DataEmbarque AS DataEmbarque,
+  ExpotadoTransito.Fatura AS Fatura,
+  ExpotadoTransito.ETADestino AS ETADestino,
+  ExpotadoTransito.OBS AS OBS,
+  Informe.FORCOD AS FORCOD,
+  Informe.ID AS ID
+from ( select
+       ContratoTransporte.Contrato AS Contrato,
+       ContratoTransporte.NomeMix AS NomeMix,
+       ContratoTransporte.C_C AS C_C,
+       ContratoTransporte.QUANTIDADETOTAL AS QUANTIDADETOTAL,
+       ContratoTransporte.SDataEmbarque AS SDataEmbarque,
+       ContratoTransporte.PRECOFOBTOTAL AS PRECOFOBTOTAL,
+       ContratoTransporte.VALORSCCTOTAL AS VALORSCCTOTAL,
+       ContratoTransporte.FORCOD AS FORCOD,
+       ContratoTransporte.ID AS ID
+       from  ContratoTransporte
+     ) as  Informe
+Left Outer Join TAB_PAIS on
+  Informe.ID = TAB_PAIS.ID
+Left Outer Join Fornecedores on
+  Informe.FORCOD = Fornecedores.FORCOD
+Left Outer Join ExpotadoTransito on
+  Informe.Contrato = ExpotadoTransito.Contrato
+Left Outer Join Boocking on
+  Informe.Contrato = Boocking.Contrato
+Left Outer Join PrudutoContratoT on
+  Informe.Contrato = PrudutoContratoT.Contrato
+Order By Informe.Contrato
