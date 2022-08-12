@@ -1,2 +1,0 @@
-[RxMemoryData_Excel."FORMPAGO"]
-[RxMemoryData_Excel_DT."FORMPAGO"]
