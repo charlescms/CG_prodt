@@ -1,0 +1,19 @@
+select *
+from
+//      exportadotransito
+//    ,
+      ordemcobrancaprodexp
+where
+//     exportadotransito.contrato = ordemcobrancaprodexp.contrato
+//and
+     ordemcobrancaprodexp.contrato = '7439'
+	 
+	 
+	 
+select
+     *
+from
+      ordemcobrancaprodexp , ordemcobranca
+where
+     ordemcobranca.numordcobranca = ordemcobrancaprodexp.numordcobranca and
+     ordemcobrancaprodexp.contrato = '7439'

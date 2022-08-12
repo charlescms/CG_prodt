@@ -1,0 +1,35 @@
+select
+ordemcobrancaprodexp.NUMORDCOBRANCA,
+OrdemCobranca.NUMORDCOBRANCA ,
+exportadotransito.NUMORDCOBRANCA ,
+ordemcobrancaprodexp.CONTRATO,
+exportadotransito.CONTRATO ,
+ordemcobrancaprodexp.SEQ,
+exportadotransito.SEQ ,
+ordemcobrancaprodexp.COMISAOSFATURA,
+exportadotransito.COMISAOSFATURA ,
+ordemcobrancaprodexp.VALORCONVERTIDO,
+exportadotransito.VALORCONVERTIDO ,
+OrdemCobranca.DATAFATURA,
+OrdemCobranca.STATUS,
+exportadotransito.STATUS ,
+OrdemCobranca.NUMNFEMIT,
+exportadotransito.NUMNFEMIT ,
+OrdemCobranca.DATANF,
+exportadotransito.DATANF ,
+OrdemCobranca.COMENTARIO,
+exportadotransito.COMENTARIO ,
+OrdemCobranca.VALOR_NF,
+exportadotransito.VALOR_NF ,
+OrdemCobranca.DATALIQ,
+exportadotransito.DATALIQ ,
+OrdemCobranca.RECEBIMENTO,
+exportadotransito.RECEBIMENTO
+from
+      ordemcobrancaprodexp , ordemcobranca , exportadotransito
+where
+    not ( ordemcobranca.NUMNFEMIT = exportadotransito.NUMNFEMIT = null )   and
+    ( exportadotransito.contrato = ordemcobrancaprodexp.contrato and
+     exportadotransito.seq = ordemcobrancaprodexp.seq    and
+     ordemcobranca.numordcobranca = ordemcobrancaprodexp.numordcobranca and
+     ordemcobrancaprodexp.contrato = '7439' )

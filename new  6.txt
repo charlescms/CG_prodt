@@ -1,0 +1,40 @@
+Select distinct
+  CERBO.seq AS seq,
+  CERBO.Contrato AS Contrato,
+  Fornecedores.RAZAO AS RAZAO,
+  CERBO.Navio AS Navio,
+  CERBO.DataEmbarque AS DataEmbarque,
+  CERBO.QuantidadeExp AS QuantidadeExp,
+  ContratoTransporte.QUANTTOTALEXP as QuantidadeExp   ,
+  CERBO.Fatura AS Fatura,
+  ContratoTransporte.Comissao AS Comissao,
+  ContratoTransporte.FormComissao AS FormComissao,
+  CERBO.ComisaoSFatura AS ComisaoSFatura,
+  ContratoTransporte.VALORTOTALCOMISSAO as VALORTOTALCOMISSAO  ,
+  CERBO.NumNFEmit AS NumNFEmit,
+  CERBO.NumFatura AS NumFatura,
+  Clientes.RAZAO AS RAZAO_CLIENTE,
+  Clientes.CLICOD AS CLICOD ,
+  CERBO.Status AS Status
+from ( select DISTINCT
+       ExportadoTransito.SEQ AS SEQ,
+       ExportadoTransito.Contrato AS Contrato,
+       ExportadoTransito.Navio AS Navio,
+       ExportadoTransito.DataEmbarque AS DataEmbarque,
+       ExportadoTransito.QuantidadeExp AS QuantidadeExp,
+       ExportadoTransito.Fatura AS Fatura,
+       ExportadoTransito.ComisaoSFatura AS ComisaoSFatura,
+       ExportadoTransito.NumNFEmit AS NumNFEmit,
+       ExportadoTransito.NumFatura AS NumFatura,
+       ExportadoTransito.Status AS Status
+       from  ExportadoTransito
+     ) as  CERBO
+Left Outer Join ContratoTransporte on
+  CERBO.Contrato = ContratoTransporte.Contrato
+Left Outer Join Fornecedores on
+  ContratoTransporte.FORCOD = Fornecedores.FORCOD
+Left Outer Join Clientes on
+  ContratoTransporte.CLICOD = Clientes.CLICOD
+Left Outer Join Divisoes on
+  ContratoTransporte.CLICOD = Divisoes.CLICOD
+Order By ContratoTransporte.CLICOD,CERBO.Contrato

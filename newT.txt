@@ -1,0 +1,38 @@
+NumOrdCobranca
+Contrato
+Fatura
+DataOrdCobranca
+Status
+MOEDACOMISSAO
+Valor
+TAXACONVERCAO
+COMISAOSFATURA  [SUM([DOrdemCobrancaProdExp."COMISAOSFATURA"], BAMDA101)] [SUM([DOrdemCobrncaProdExp."COMISAOSFATURA"], BAMDA101)]
+                [if( [DOrdemCobrancaProdExp."ValorConvertido"] > 0  , [DOrdemCobrancaProdExp."ValorConvertido"] ,0 )]
+
+VALORCONVERTIDO  [SUM([DOrdemCobrancaProdExp."ValorConvertido"], BAMDA101)]
+                 [[SUM([DOrdemCobrncaProdExp."ValorConvertido"], BAMDA101)] + [SUM([DOrdemCobrancaDescont."Valor"], BAMDA102)]]
+                 
+                 [if(SUM([DOrdemCobrancaDescont."VALOR"], BAMDA102) <> 0  ,'Com Desconto' ,  'Sem Desconto')]
+ 
+    
+Seq
+Navio
+DataEmbarque
+ETADestino
+QuantidadeExp
+FormPago
+PrecoFOB
+StDocumento
+OBS
+Comentario
+Rate
+DataLiq
+Cadastro
+NomeMix
+Comissao
+ValorDesconto
+VALOR_EX
+VALORDESCONTO_EX
+COMISAOSFATURA_EX
+VALORCONVERTIDO_EX
+Usuario
