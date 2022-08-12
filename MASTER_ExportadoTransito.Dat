@@ -1,0 +1,6 @@
+[0]
+Titulo=elanie
+Filtro.0= ContratoTransporte.FORCOD = 000022 AND Fatura.Status = '2' 
+Titulo_Ord=Cadastro
+Ordenacao=Fatura.Cadastro DESC
+Campos=Contrato;Seq;Selecionado;Status;StatusCT;NumNFEmit;NomeMix;Navio;DataEmbarque;QuantidadeExp;StDocumento;FormComissao;Comissao;Valor;ETADestino;FormPago;PrecoFOB;ComisaoSFatura;DataOrdCobranca;Rate;MOEDACOMISSAOTAXA;ValorConvertido;DataNF;OBS;Comentario;DataLiq;FORCOD;MOEDACOMISSAO;RAZAO;Recebimento;Valor_NF

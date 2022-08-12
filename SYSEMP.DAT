@@ -1,2 +1,34 @@
 [EMPRESA 00]
 Nome=Empresa Usuária
+Endereco=
+Bairro=
+Cidade=
+UF=
+CEP=
+CNPJ=
+Inscricao=
+Fones=
+Logo=D:\Projetos\Surimpex\trunk\Imagens\GetAttachment.jpg
+Base 0000=D:\Projetos\Surimpex\trunk\BASE.GDB
+Host 0000=
+Servidor 0000=1
+Usuario 0000=sysdba
+Senha 0000=xfjsdurbl
+[EMPRESA 01]
+Nome=PRODUCAO 
+Endereco=
+Bairro=
+Cidade=
+UF=
+CEP=
+CNPJ=
+Inscricao=
+Fones=
+Logo=D:\Projetos\Surimpex\trunk\Imagens\GetAttachment.jpg
+Base 0000=C:\DADOS\SISTEMA\BASE.GDB
+Host 0000=SERVER
+Servidor 0000=1
+Usuario 0000=
+Senha 0000=
+[EMPRESA 02]
+Nome=Nova Empresa
