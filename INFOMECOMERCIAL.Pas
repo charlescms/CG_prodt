@@ -631,7 +631,9 @@ TRY
     if iMesAnt = 0 then begin
        iMesAnt := 12 ;
        iAnoAnt := iAno - 1 ;
-       iAnoAnt := 1900 ;
+       
+    // 07/02/2014 erro gerado pelo charles
+    //   iAnoAnt := 1900 ;
     end;
 
     if idia = 31   then

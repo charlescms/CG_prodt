@@ -1,6 +1,6 @@
 object FormPrincipal: TFormPrincipal
-  Left = 260
-  Top = 174
+  Left = 198
+  Top = 325
   Width = 950
   Height = 665
   Caption = 'Titulo do Projeto'

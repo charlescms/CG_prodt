@@ -3,3 +3,6 @@
 *.exe
 *.bak
 *.gdb
+*.xml
+*.map 
+*.cfg

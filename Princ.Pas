@@ -1,4 +1,4 @@
- {
+{
  Empresa....: CMS
  Módulo.....: Princ.Pas - Formulário Principal
  Sistema....: 
@@ -149,7 +149,16 @@ Versao         := '3.43';
 // 10/01/2014
 foi informado pela karina que neste relatorio nao entra o fornecedor surimpex que posuui o codifo de munero 17
       Versao         := '3.44
-}
+
+
+// 23/01/2014
+O FUNCIONARIA KARINA SOLICITOU A MUDANCA DA MASCARA DO CAMPO RATE DO RELATORIO RELCOMPEN
+      Versao         := '3.45
+// 07/02/2014
+arquivo modificado unit INFOMECOMERCIAL; e unit RESUMEN;
+
+  Versao         := '3.46
+      }
 
                        
 unit Princ;
